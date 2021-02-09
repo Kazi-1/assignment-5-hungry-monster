@@ -6,7 +6,7 @@ const searchMeals = () => {
         fetch(url)
             .then(res => res.json())
             .then(dataJason => displayMeals(dataJason.meals))
-
+            .catch(error => displayErrors("Something Went Wrong, Please Try Again Later!!"));
     })
 }
 
@@ -17,7 +17,7 @@ const displayMeals = meals => {
         mealDiv.className = 'meal-style'
         const mealInfo = `
         <h3 class="meal-name">${meal.strMeal}</h3>
-        <button onclick="displayMealInfo('${meal.strMeal}')">Show Ingredients</button>
+        <button class="form-control" onclick="displayMealInfo('${meal.strMeal}')">Show Ingredients</button>
         `;
 
         mealDiv.innerHTML = mealInfo;
@@ -32,4 +32,10 @@ const displayMealInfo = ingredients => {
     fetch(url)
     .then(res => res.json())
     .then(data => console.log(data))
+}
+
+const displayErrors = error =>{
+    const errorTag = document.getElementById('error-message');
+    errorTag.innerText = error; 
+
 }
