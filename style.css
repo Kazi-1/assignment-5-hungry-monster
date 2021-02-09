@@ -1,0 +1,22 @@
+.meal-style {
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.meal-name {
+    font-size: 45px;
+    color: magenta;
+}
+#meal-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    grid-gap: 30px;
+}
+
+#meal-infos img{
+    width: 400px
+}
